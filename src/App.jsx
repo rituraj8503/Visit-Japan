@@ -12,6 +12,7 @@ export default function App() {
     <div className="app">
       <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Topbar>
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Menu>
+      <Map id="map"></Map>
       <div className="sections">
         <Home></Home>
       </div>
