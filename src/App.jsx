@@ -5,18 +5,30 @@ import Topbar from './components/topbar/Topbar';
 import { useState } from 'react';
 import Menu from './components/topbar/menu/Menu';
 import Map from './components/topbar/map/Map';
+import Tokyo from './components/topbar/Tokyo/Tokyo';
+import Searched from './components/topbar/searched/Searched';
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
-  return (
-    <div className="app">
-      <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Topbar>
-      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Menu>
-      <Map id="map"></Map>
-      <div className="sections">
-        <Home></Home>
+  const [clickedTourism, setClickedTourism] = useState(false);
+
+  if (!clickedTourism) {
+    return (
+      <div className="app">
+        <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Topbar>
+        <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Menu>
+        {/* <Map id="map"></Map> */}
+        <div className="sections">
+          <Home></Home>
+          <Tokyo clickedTourism={clickedTourism} setClickedTourism={setClickedTourism}></Tokyo>
+        </div>
       </div>
-    </div>
-  )
+    )
+  } else {
+    return (
+      <Searched></Searched>
+    );
+  }
+
 }
 

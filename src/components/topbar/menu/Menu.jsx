@@ -8,8 +8,8 @@ export default function Menu( { menuOpen, setMenuOpen } ) {
                 <li onClick={() => setMenuOpen(false)}>
                     <a href="#home">Home</a>
                 </li>
-                <li>
-                    <a href="#home">Tokyo</a>
+                <li onClick={() => setMenuOpen(false)}>
+                    <a href="#tokyo">Tokyo</a>
                 </li>
             </ul>
         </div>
