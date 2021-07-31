@@ -6,7 +6,6 @@ export default function Searched() {
     return (
         <div>
             <div className="top">
-                <img src={tourism} alt="..."/>
             </div>
         </div>
     )
