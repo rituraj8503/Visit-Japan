@@ -3,7 +3,7 @@ import "./tokyo.scss";
 
 export default function Tokyo({clickedTourism, setClickedTourism, getLocations}) {
     async function getTourismData() {
-        const locations = await fetch("http://localhost:4000/api/tourism");
+        const locations = await fetch("/api/tourism");
         const jsonLocation = await locations.json();
         setClickedTourism(true);
         await getLocations(jsonLocation);
