@@ -9,6 +9,11 @@ import ReactMapGL, {Marker} from "react-map-gl";
 import {WrappedMap} from "./components/topbar/map/Map";
 import Tokyo from './components/topbar/Tokyo/Tokyo';
 import Searched from './components/topbar/searched/Searched';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from 'mapbox-gl';
+
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
